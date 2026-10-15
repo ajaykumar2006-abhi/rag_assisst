@@ -1,0 +1,19 @@
+
+Running 7 tests using 1 worker
+
+  ok 1 [chromium] › galaxy.spec.ts:34:1 › screen 1 — welcome page shows live backend facts (2.1s)
+  ok 2 [chromium] › galaxy.spec.ts:42:1 › screens 2-4 — upload, watch processing, ask, follow the citation (5.4s)
+  ok 3 [chromium] › galaxy.spec.ts:99:1 › refuses a question the documents cannot support (3.1s)
+  ok 4 [chromium] › galaxy.spec.ts:107:1 › screen 5 — evaluation dashboard runs a real measurement (6.9s)
+  ok 5 [chromium] › galaxy.spec.ts:125:1 › screen 6 — settings and privacy report real storage (8.6s)
+  ok 6 [chromium] › galaxy.spec.ts:141:1 › deletion removes the document from the library (5.4s)
+  ok 7 [chromium] › galaxy.spec.ts:156:1 › keyboard navigation reaches every screen (6.3s)
+
+  Slow test file: [chromium] › galaxy.spec.ts (37.8s)
+  Consider splitting slow test files to speed up parallel execution
+  7 passed (39.4s)
+
+To open last HTML report run:
+
+  npx playwright show-report
+

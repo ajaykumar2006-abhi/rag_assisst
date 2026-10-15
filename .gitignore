@@ -1,0 +1,57 @@
+# ---- secrets -------------------------------------------------------------
+# Never commit real credentials. .env.example documents the variables instead.
+.env
+.env.*
+!.env.example
+
+# ---- local runtime data (documents, SQLite, vector index) -----------------
+# `data/` is the default DATA_DIR; `data-*/` covers throwaway verification stores
+# created with DATA_DIR=backend/data-verify and the like.
+backend/data/
+backend/data-*/
+*.sqlite3
+*.sqlite3-journal
+*.sqlite3-wal
+
+# ---- Python --------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+backend/install.log
+
+# ---- Node / frontend -----------------------------------------------------
+node_modules/
+frontend/dist/
+frontend/coverage/
+frontend/playwright-report/
+frontend/test-results/
+frontend/.vite/
+
+# ---- generated evaluation output -----------------------------------------
+# Run artifacts are regenerated on demand; the reference run is archived under
+# docs/evidence/ so the numbers quoted in the documentation stay reproducible.
+eval/results/
+
+# ---- local scratch -------------------------------------------------------
+logs/
+tools/
+*.log
+.DS_Store
+Thumbs.db
+
+# ---- editor / agent tool artifacts ----------------------------------------
+# Freebuff workspace metadata and throwaway e2e stores: local-only, never
+# required for functionality, reproducibility or attribution.
+.freebuff/
+backend/.e2e-data/
+
+# ---- machine-specific IDE / workspace files ------------------------------
+.vscode/
+.idea/
+*.code-workspace

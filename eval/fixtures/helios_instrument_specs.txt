@@ -1,0 +1,11 @@
+HELIOS DEEP FIELD SURVEY - INSTRUMENT SPECIFICATIONS
+
+The Wide Field Imager is a 1.2 metre aperture telescope feeding a 96 megapixel focal plane array. Its field of view is 3.4 square degrees, split across four detector banks. The imager covers six broadband filters from 350 nanometres to 1050 nanometres and reaches a limiting magnitude of 26.1 in a 900 second exposure. The detector is cooled to 118 kelvin by a single stage radiator and the focal plane is held stable to within 0.02 kelvin.
+
+The Low Frequency Spectrometer is a dual channel instrument covering 40 to 320 megahertz. Spectral resolution is 3.2 kilohertz per channel across 4096 channels. The spectrometer requires the spacecraft to be pointed within 0.5 degrees of the target and is sensitive to radio frequency interference from ground transmitters, so observations are scheduled only when the observatory is above the night side of the orbital track.
+
+The Fine Guidance Sensor provides the attitude reference for all science observations. It tracks up to 24 guide stars simultaneously and delivers an absolute pointing accuracy of 0.18 arcseconds. Without a valid guidance solution, the observatory autonomously enters safe mode within 90 seconds.
+
+The three instruments share a single 320 gigabit solid state recorder. The recorder holds 48 hours of continuous survey data before the buffer must be downlinked. Downlink uses a Ka band transmitter at 260 megabits per second during the Ascension Island passes, which occur four times per day.
+
+Thermal control is fully passive. Total instrument mass is 1,842 kilograms and the observatory draws 3.1 kilowatts at peak survey operations.

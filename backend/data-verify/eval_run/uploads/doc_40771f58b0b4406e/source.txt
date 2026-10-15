@@ -1,0 +1,11 @@
+HELIOS DEEP FIELD SURVEY - MISSION OVERVIEW
+
+Helios Deep Field Survey is a fictional robotic observatory mission operated by the Cartographer Consortium. The mission launched on 14 March 2031 from the Kourou equatorial range and entered its science orbit on 2 August 2031 after a 141 day cruise.
+
+The primary science objective is a wide-field survey of the Norma Cluster, a concentration of galaxies at roughly 70 megaparsecs from Earth. The survey is designed to catalogue low surface brightness structures that earlier wide-field instruments resolved poorly.
+
+The spacecraft carries three instruments: the Wide Field Imager, the Low Frequency Spectrometer, and the Fine Guidance Sensor. The observatory operates in a low Earth orbit at an altitude of 612 kilometres with an inclination of 28.5 degrees.
+
+Mission operations are distributed across three ground stations. The primary control centre is at Svalbard, with a backup tracking facility in Punta Arenas and a data downlink station on Ascension Island. The mission is designed for a five year prime phase with a three year extended phase contingent on propellant margin.
+
+Total mission cost through the prime phase was 418 million euros. The consortium comprises nine member institutes across six countries. Data products are released to the public archive after a proprietary period of twelve months.

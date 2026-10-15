@@ -1,0 +1,84 @@
+Target: http://127.0.0.1:8000
+Cleared 3 pre-existing document(s) first.
+
+1. Health
+  [PASS] GET /health returns 200 — http 200
+     embedder=hashing-subword-v1 dim=512 answers=extractive
+
+2. Upload
+  [PASS] POST /documents accepts helios_mission_brief.pdf — http 201
+  [PASS] helios_mission_brief.pdf extension detected — .pdf
+  [PASS] POST /documents accepts helios_instrument_specs.txt — http 201
+  [PASS] helios_instrument_specs.txt extension detected — .txt
+  [PASS] POST /documents accepts helios_ops_procedures.docx — http 201
+  [PASS] helios_ops_procedures.docx extension detected — .docx
+
+3. Processing
+  [PASS] helios_mission_brief.pdf indexed — status=ready
+  [PASS] helios_mission_brief.pdf marked as indexed
+  [PASS] helios_mission_brief.pdf completed all 7 stages — validate:completed, extract:completed, structure:completed, chunk:completed, embed:completed, index:completed, verify:completed
+  [PASS] helios_mission_brief.pdf produced retrievable chunks — 5 chunks
+  [PASS] helios_instrument_specs.txt indexed — status=ready
+  [PASS] helios_instrument_specs.txt marked as indexed
+  [PASS] helios_instrument_specs.txt completed all 7 stages — validate:completed, extract:completed, structure:completed, chunk:completed, embed:completed, index:completed, verify:completed
+  [PASS] helios_instrument_specs.txt produced retrievable chunks — 3 chunks
+  [PASS] helios_ops_procedures.docx indexed — status=ready
+  [PASS] helios_ops_procedures.docx marked as indexed
+  [PASS] helios_ops_procedures.docx completed all 7 stages — validate:completed, extract:completed, structure:completed, chunk:completed, embed:completed, index:completed, verify:completed
+  [PASS] helios_ops_procedures.docx produced retrievable chunks — 3 chunks
+
+4. Grounded answers with verifiable citations
+  [PASS] answered: When did the Helios mission launch? — http 200
+  [PASS] evidence found for: When did the Helios mission launch? — mode=extractive
+  [PASS] answer contains '14 March 2031' — HELIOS DEEP FIELD SURVEY - MISSION OVERVIEW
+Helios Deep Field Survey is a fictional robotic observatory mission operated by the
+Cartographer
+  [PASS] citation points at helios_mission_brief.pdf — cited: helios_mission_brief.pdf, helios_ops_procedures.docx
+  [PASS] PDF citation carries a page number — pages=[1]
+  [PASS] every [n] marker in the answer maps to a returned citation — markers=[1, 1, 1, 2, 2, 4] citations=[1, 2, 4]
+  [PASS] answered: What altitude and inclination does the observatory o — http 200
+  [PASS] evidence found for: What altitude and inclination does the observatory o — mode=extractive
+  [PASS] answer contains '612 kilometres' — The observatory operates in a low Earth orbit at
+an altitude of 612 kilometres with an inclination of 28.5 degrees [1].
+  [PASS] citation points at helios_mission_brief.pdf — cited: helios_mission_brief.pdf
+  [PASS] PDF citation carries a page number — pages=[1]
+  [PASS] every [n] marker in the answer maps to a returned citation — markers=[1] citations=[1]
+  [PASS] answered: What frequency range does the Low Frequency Spectrom — http 200
+  [PASS] evidence found for: What frequency range does the Low Frequency Spectrom — mode=extractive
+  [PASS] answer contains '320 megahertz' — The Low Frequency Spectrometer is a dual channel instrument covering 40 to 320 megahertz [1]. The spectrometer
+requires the spacecraft to be
+  [PASS] citation points at helios_mission_brief.pdf — cited: helios_instrument_specs.txt, helios_mission_brief.pdf, helios_ops_procedures.docx
+  [PASS] PDF citation carries a page number — pages=[1, 2]
+  [PASS] every [n] marker in the answer maps to a returned citation — markers=[1, 1, 2, 4, 5] citations=[1, 2, 4, 5]
+  [PASS] answered: How often is calibration performed? — http 200
+  [PASS] evidence found for: How often is calibration performed? — mode=extractive
+  [PASS] answer contains 'every 30 days' — Calibration is performed every 30 days using an internal reference lamp for the imager and a noise diode injection for the spectrometer [1].
+  [PASS] citation points at helios_ops_procedures.docx — cited: helios_ops_procedures.docx
+  [PASS] every [n] marker in the answer maps to a returned citation — markers=[1, 1, 1] citations=[1]
+  [PASS] answered: What is the aperture of the Wide Field Imager? — http 200
+  [PASS] evidence found for: What is the aperture of the Wide Field Imager? — mode=extractive
+  [PASS] answer contains '1.2 metre aperture' — HELIOS DEEP FIELD SURVEY - INSTRUMENT SPECIFICATIONS
+
+The Wide Field Imager is a 1.2 metre aperture telescope feeding a 96 megapixel focal p
+  [PASS] citation points at helios_instrument_specs.txt — cited: helios_instrument_specs.txt, helios_mission_brief.pdf
+  [PASS] every [n] marker in the answer maps to a returned citation — markers=[1, 3] citations=[1, 3]
+
+5. Refusal when the documents cannot support an answer
+  [PASS] out-of-scope question is refused — mode=insufficient
+  [PASS] refusal returns no citations — 0 citations
+
+6. Conversations are persisted
+  [PASS] conversation created — http 201
+  [PASS] answer recorded in the conversation
+  [PASS] conversation stores the question and the answer — 2 messages
+  [PASS] stored answer kept its citations
+
+7. Deletion removes file, chunks and vectors
+  [PASS] DELETE helios_mission_brief.pdf — http 200
+  [PASS] vectors removed — 5 vectors
+  [PASS] document no longer listed — 3 -> 2
+  [PASS] deleted id absent from the listing
+  [PASS] fetching the deleted document returns 404 — http 404
+  [PASS] questions scoped to the deleted document are rejected cleanly — http 404
+
+59/59 checks passed

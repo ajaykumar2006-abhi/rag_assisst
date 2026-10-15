@@ -1,0 +1,13 @@
+HELIOS DEEP FIELD SURVEY - OPERATIONS PROCEDURES
+
+Daily operations follow a fixed cadence. The science planning team uploads the observation timeline 36 hours before execution. Each uploaded timeline is validated against the instrument constraints before the command load is committed to the spacecraft.
+
+Safe mode entry occurs automatically when any of three conditions is met: the guidance solution is invalid for more than 90 seconds, the solid state recorder exceeds 95 percent capacity, or the spacecraft bus voltage drops below 27.5 volts. Recovery from safe mode requires an operator command and a fresh attitude determination, and the observatory remains in safe mode until the root cause is identified.
+
+Radio frequency interference is the dominant scheduling constraint for the spectrometer. Interference events are logged automatically and any spectrum recorded during a flagged interval is discarded rather than downlinked.
+
+Data is downlinked four times per day. Each pass has a nominal duration of 11 minutes. If a pass is missed, the recorder buffer continues to fill and the next available pass takes priority. Telemetry is monitored continuously at Svalbard, and the Punta Arenas facility assumes control whenever Svalbard loses contact for more than 20 minutes.
+
+Calibration is performed every 30 days using an internal reference lamp for the imager and a noise diode injection for the spectrometer. Calibration data is archived alongside the science data and is not subject to the twelve month proprietary period.
+
+Anomaly reporting is mandatory for any unplanned safe mode entry. The anomaly review board meets weekly and classifies each event as either a recoverable operational error or a hardware fault requiring mitigation.

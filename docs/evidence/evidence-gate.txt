@@ -1,0 +1,29 @@
+Fusion: dense=0.65 lexical=0.35 min_relevance=0.05
+Embedder: hashing
+
+label            fused   dense  lexical  mode          question
+---------------------------------------------------------------
+positive         0.255   0.186    0.383  extractive    When did the Helios mission launch?
+positive         0.384   0.306    0.528  extractive    What altitude and inclination does the observatory o
+positive         0.342   0.269    0.477  extractive    What is the aperture of the Wide Field Imager?
+positive          0.33   0.246    0.485  extractive    How often is calibration performed?
+positive         0.373   0.299    0.512  extractive    What temperature is the wide field detector cooled t
+positive         0.346   0.264    0.498  extractive    What is the nominal duration of a downlink pass?
+positive         0.321   0.299    0.361  extractive    What transmitter and data rate does the downlink use
+paraphrase       0.249    0.19    0.359  extractive    How quickly can the observatory send its data back t
+paraphrase       0.161   0.145    0.191  extractive    How big is the main telescope mirror?
+out_of_scope       0.0     0.0      0.0  insufficient  Which football team won the 1994 FIFA World Cup fina
+                                 -> Searched 4 document(s) (injection.txt, helios_ops_procedures.docx, helios_mission_brief.pdf). Best match scored 0.151. The closest passage shares almost no wording with the question (vector similarity 0.094, keyword overlap 0.256), which is the signature of a question this document set does not cover.
+out_of_scope       0.0     0.0      0.0  insufficient  What is the capital of Mongolia?
+                                 -> No sentence in the retrieved passages shared meaningful vocabulary with the question. Closest match scored 0.081.
+out_of_scope       0.0     0.0      0.0  insufficient  How do I bake sourdough bread at home?
+                                 -> Searched 4 document(s) (injection.txt, helios_ops_procedures.docx, helios_mission_brief.pdf). Best match scored 0.054. The closest passage shares almost no wording with the question (vector similarity 0.082, keyword overlap 0.000), which is the signature of a question this document set does not cover.
+out_of_scope       0.0     0.0      0.0  insufficient  Who wrote the novel Pride and Prejudice?
+                                 -> No sentence in the retrieved passages shared meaningful vocabulary with the question. Closest match scored 0.101.
+out_of_scope       0.0     0.0      0.0  insufficient  What is the current interest rate in Brazil?
+                                 -> No sentence in the retrieved passages shared meaningful vocabulary with the question. Closest match scored 0.100.
+
+in-scope answered:   9/9
+out-of-scope refused: 5/5
+
+Report written to C:\Users\<user>\Desktop\rag-document-intelligence\eval\results\evidence_gate_20261015T082441.json
